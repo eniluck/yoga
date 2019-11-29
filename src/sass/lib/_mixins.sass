@@ -1,2 +1,10 @@
-=box
-	box-sizing: border-box
+//Описание font-family
+//Использование:
+//+font(Geometria,Geometria)
+=font($alias, $file_name)
+	@font-face
+		font-family: $alias
+		src: url("/assets/fonts/" + $file_name + ".eot")
+		src: url("/assets/fonts/" + $file_name + ".eot?#iefix") format("embedded-opentype"), url("/assets/fonts/" + $file_name + ".woff2") format("woff2"),url("/assets/fonts/" + $file_name + ".woff") format("woff"),url("/assets/fonts/" + $file_name + ".ttf") format("truetype")
+		font-weight: normal
+		font-style: normal
