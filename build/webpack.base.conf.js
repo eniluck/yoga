@@ -34,6 +34,13 @@ module.exports = {
         exclude: '/node_modules/'
       },
       {
+        test: /\.(eot|ttf|woff(2)?|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
@@ -41,7 +48,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.sass$/,
         use:[
           {
             loader: MiniCssExtractPlugin.loader,
@@ -76,6 +83,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img` , to: `${PATHS.assets}img`},
+      { from: `${PATHS.src}/fonts` , to: `${PATHS.assets}fonts`},
       { from: `${PATHS.src}/static` , to: ''},
     ]),
     new HtmlWebpackPlugin({
